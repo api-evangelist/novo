@@ -26,9 +26,14 @@ tags:
 - Data Aggregation
 created: '2026-07-23'
 modified: '2026-07-23'
+enriched: '2026-07-23'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: TrustCenter
+  url: security/novo-trust-center.yml
+- type: DomainSecurity
+  url: security/novo-domain-security.yml
 - type: Website
   url: https://novo.co
 - type: Support
@@ -43,6 +48,14 @@ common:
   url: https://www.linkedin.com/company/banknovo
 - type: Documentation
   url: https://plaid.com/institutions/novo/
+- type: SignUp
+  url: https://app.novo.co/signup
+- type: GettingStarted
+  url: https://www.novo.co/get-started
+- type: Compliance
+  url: https://trust.novo.co/
+- type: LLMsTxt
+  url: llms/novo-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

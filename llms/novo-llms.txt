@@ -1,0 +1,27 @@
+# Novo
+
+> Novo is a New York- and Miami-based financial technology company (founded 2016) operating a digital business-banking platform for small businesses, entrepreneurs, and freelancers. Novo is not a chartered bank; it is a service provider to Middlesex Federal Savings, F.A. (Member FDIC), which holds deposits and provides the underlying banking products. Novo publishes no first-party public developer API and runs no developer portal; consumer-permissioned account data (Auth, Balance, Identity, Transactions) is reached by third parties only through the Plaid aggregator.
+
+## Product
+- [Business Checking](https://www.novo.co/business-checking): Fee-free business checking account.
+- [Business Banking](https://www.novo.co/business-banking): Digital banking platform for small business.
+- [Get Started](https://www.novo.co/get-started): Open a Novo account.
+- [Sign Up](https://app.novo.co/signup): Application onboarding flow.
+
+## Company
+- [Website](https://www.novo.co): Novo homepage.
+- [Learn / Blog](https://www.novo.co/learn): Small-business finance content.
+- [Help Center](https://www.novo.co/help): Customer support.
+- [LinkedIn](https://www.linkedin.com/company/banknovo): Company profile.
+
+## Data access
+- [Plaid institution page](https://plaid.com/institutions/novo/): Third-party account-data access to Novo is brokered through Plaid (Auth, Balance, Identity, Transactions). Novo exposes no direct public API.
+
+## Trust & legal
+- [Trust Center](https://trust.novo.co/): Security posture; SOC 2 attested.
+- [Privacy Policy](https://www.novo.co/legal/privacy)
+- [Terms / Legal](https://www.novo.co/legal)
+
+## Notes
+- No first-party public developer API, developer portal, OpenAPI, SDKs, or webhook surface as of this review.
+- No documented FDX participation or CFPB Section 1033 data-access commitment published.
