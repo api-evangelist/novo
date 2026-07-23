@@ -1,0 +1,102 @@
+aid: novo
+name: Novo
+review:
+  question: Does Novo expose a first-party public developer API or developer portal?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Novo (novo.co) is a US small-business banking fintech, not a chartered
+    bank. Banking services are provided by its partner Middlesex Federal
+    Savings, F.A. (Member FDIC). Novo publishes NO first-party public
+    developer API and runs NO developer portal. Both developer.novo.co and
+    developers.novo.co fail to resolve (no DNS / connection). There is no
+    "Developers" or "API" link anywhere in the site navigation or footer,
+    and no downloadable OpenAPI/Swagger is published. A host at
+    api.novo.co exists but is Novo's private first-party mobile/web
+    application backend (served through an istio-envoy gateway with
+    proprietary auth headers such as novo-uuid-token and x-castle-client-id),
+    not a documented, public, or partner-facing developer API. The honest
+    open-finance reality for Novo is aggregator-only: consumer-permissioned
+    account data is reachable by third parties through the Plaid aggregator
+    (Depository institution; supported Plaid products include Auth, Balance,
+    Assets, and Transactions). No FDX participation and no CFPB Section 1033
+    data-access commitment is publicly documented as of the review date.
+  charterType: |
+    Financial technology company (not a bank). Deposits and banking products
+    are held/provided by Middlesex Federal Savings, F.A., a federal savings
+    association and FDIC member. Novo acts as its service provider.
+  firstPartyDeveloperPortal: false
+  developerPortalUrl: ""
+  downloadableSpecs: false
+  specProvenance: none
+  authModel: |
+    No public developer authentication model is documented (no OAuth2/OIDC,
+    API key, or mTLS developer credentials are offered) because there is no
+    public API program. The internal api.novo.co backend uses proprietary
+    session/device headers for Novo's own apps only.
+  fdxParticipant: false
+  section1033Posture: |
+    No published CFPB Section 1033 (Personal Financial Data Rights) posture
+    or data-access commitment was found.
+  aggregatorAccess:
+    - aggregator: Plaid
+      institutionUrl: https://plaid.com/institutions/novo/
+      accountType: Depository
+      geography: US
+      products:
+        - Auth
+        - Balance
+        - Assets
+        - Transactions
+      note: |
+        Third-party access to Novo account data is consumer-permissioned via
+        Plaid. This is aggregator access, not a Novo first-party API.
+  transports:
+    - protocol: REST
+      scheme: https
+      note: Private first-party app backend at api.novo.co (istio-envoy gateway); not a documented public developer API.
+      documented: false
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket surface documented; no public API program exists.
+  probes:
+    - url: https://developer.novo.co
+      status: "000"
+      note: Does not resolve (no developer portal).
+    - url: https://developers.novo.co
+      status: "000"
+      note: Does not resolve.
+    - url: https://novo.co
+      status: "200"
+      note: Marketing site; no Developers/API navigation.
+    - url: https://api.novo.co
+      status: "301->404"
+      note: Redirects to /404; private app backend, no public docs.
+    - url: https://novo.co/integrations
+      status: "200"
+      note: Inbound third-party tool integrations (QuickBooks, Stripe, Shopify, Wise), not a Novo-published API.
+    - url: https://plaid.com/institutions/novo/
+      status: "200"
+      note: Confirms aggregator-only data access via Plaid.
+sources:
+  - url: https://novo.co
+    type: Website
+    note: No Developers/API link in navigation or footer.
+  - url: https://plaid.com/institutions/novo/
+    type: Documentation
+    note: Supported Plaid products - Auth, Balance, Assets, Transactions; Depository, US.
+  - url: https://www.openbankingtracker.com/provider/banknovo
+    type: Reference
+    note: Notes Novo has no direct public API and is supported by 1 aggregator (Plaid); banking partner Middlesex Federal Savings, F.A.
+actions:
+  apisYmlUpdated: true
+  openapiHarvested: false
+  reason: |
+    Identity-only ("built-stub") record. Novo exposes no first-party public
+    API and no downloadable spec, so apis[] is intentionally empty and no
+    files were written to openapi/. The honest posture - aggregator-only
+    consumer data access via Plaid, banking by Middlesex Federal Savings -
+    is captured in the description, common[] pointers, and this review.
