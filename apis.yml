@@ -48,7 +48,7 @@ common:
   url: https://www.linkedin.com/company/banknovo
 - type: Documentation
   url: https://plaid.com/institutions/novo/
-- type: SignUp
+- type: Signup
   url: https://app.novo.co/signup
 - type: GettingStarted
   url: https://www.novo.co/get-started
