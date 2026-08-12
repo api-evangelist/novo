@@ -14,6 +14,17 @@ description: Novo is a New York- and Miami-based financial technology company, f
   consumer-permissioned account data (Auth, Balance, Identity, Transactions) is reached
   by third parties only through the Plaid aggregator. No documented FDX participation
   or CFPB Section 1033 data-access commitment is published as of this review.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-11'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Financial Services
